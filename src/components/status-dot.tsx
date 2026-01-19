@@ -5,7 +5,7 @@ type StatusDotProps = {
 
 const statusStyles = {
 	online: "bg-status-online",
-	pending: "bg-status-pending",
+	pending: "bg-accent-alt",
 	offline: "bg-faint",
 } as const;
 
