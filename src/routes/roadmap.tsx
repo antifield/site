@@ -37,8 +37,8 @@ function Roadmap(): React.ReactNode {
 						ROADMAP
 					</h1>
 					<p className="text-sm text-muted max-w-lg">
-						Current development status across all Antifield projects. Features move
-						from Limbo through Testing to Live.
+						Current development status across all Antifield projects. Features
+						move from Limbo through Testing to Live.
 					</p>
 				</div>
 

@@ -28,7 +28,9 @@ function RoadmapCard({ item }: { item: RoadmapItem }): React.ReactNode {
 				<span className="font-semibold text-sm">{item.title}</span>
 				<TagBadge tag={item.tag} />
 			</div>
-			<p className="text-xs text-muted mb-2 leading-relaxed">{item.description}</p>
+			<p className="text-xs text-muted mb-2 leading-relaxed">
+				{item.description}
+			</p>
 			<div className="flex items-center justify-between">
 				<span className="font-mono text-xs text-faint">{item.id}</span>
 				<StatusBadge status={item.status} />
@@ -48,7 +50,9 @@ function StatusColumn({ status }: { status: RoadmapStatus }): React.ReactNode {
 					<span className={`w-2 h-2 rounded-full ${config.color}`} />
 					<span className="font-semibold text-sm">{config.label}</span>
 				</div>
-				<span className="font-bold text-lg">{String(items.length).padStart(2, "0")}</span>
+				<span className="font-bold text-lg">
+					{String(items.length).padStart(2, "0")}
+				</span>
 			</div>
 			<div className="flex-1 overflow-auto">
 				{items.map((item) => (
@@ -62,7 +66,11 @@ function StatusColumn({ status }: { status: RoadmapStatus }): React.ReactNode {
 	);
 }
 
-function MobileStatusSection({ status }: { status: RoadmapStatus }): React.ReactNode {
+function MobileStatusSection({
+	status,
+}: {
+	status: RoadmapStatus;
+}): React.ReactNode {
 	const items = getItemsByStatus(status);
 	const config = statusConfig[status];
 
@@ -75,7 +83,9 @@ function MobileStatusSection({ status }: { status: RoadmapStatus }): React.React
 					<span className={`w-2 h-2 rounded-full ${config.color}`} />
 					<span className="font-semibold">{config.label}</span>
 				</div>
-				<span className="font-bold text-xl">{String(items.length).padStart(2, "0")}</span>
+				<span className="font-bold text-xl">
+					{String(items.length).padStart(2, "0")}
+				</span>
 			</div>
 			{items.map((item) => (
 				<RoadmapCard key={item.id} item={item} />

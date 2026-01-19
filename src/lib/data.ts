@@ -61,7 +61,11 @@ const tagPrefixes: Record<ProjectTag, string> = {
 };
 
 function generateIds(items: RoadmapItemInput[]): RoadmapItem[] {
-	const counters: Record<ProjectTag, number> = { originoid: 100, skowt: 100, other: 100 };
+	const counters: Record<ProjectTag, number> = {
+		originoid: 100,
+		skowt: 100,
+		other: 100,
+	};
 	return items.map((item) => {
 		const id = `${tagPrefixes[item.tag]}-${counters[item.tag]}`;
 		counters[item.tag]++;
@@ -127,4 +131,9 @@ export const tagConfig = {
 	other: { label: "other", color: "text-muted" },
 } as const;
 
-export const statusOrder: RoadmapStatus[] = ["limbo", "in-progress", "testing", "live"];
+export const statusOrder: RoadmapStatus[] = [
+	"limbo",
+	"in-progress",
+	"testing",
+	"live",
+];
